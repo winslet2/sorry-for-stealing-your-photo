@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Gift 🎁💕</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            position: relative;
+            width: 350px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #message {
+            font-size: 20px;
+            margin-top: 15px;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h2>Happy Valentine's Day My Taropa! 💖</h2>
+        <img id="valentineImage" src="valentine.jpg.jpg" alt="Valentine's Gift">
+        <div id="message">You're very special to me! 💕</div>
+    </div>
+
+    <script>
+        // Image list (your uploaded images)
+        const images = [
+            "valentine.jpg.jpg",  // Image 1
+            "converted.gif",      // Image 2 (GIF)
+            "your-image-url.jpg.jpg", // Image 3
+            "converted (1).gif"   // Image 4 (GIF)
+        ];
+
+        let index = 0;
+        const valentineImage = document.getElementById("valentineImage");
+
+        function changeImage() {
+            valentineImage.src = images[index];
+            index = (index + 1) % images.length;
+        }
+
+        // Change image every 2 seconds
+        setInterval(changeImage, 2000);
+
+        // Preload images for smooth transition
+        images.forEach((img) => {
+            const imgPreload = new Image();
+            imgPreload.src = img;
+        });
+    </script>
+
+</body>
+</html>
